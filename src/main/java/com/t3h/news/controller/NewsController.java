@@ -25,6 +25,7 @@ public class NewsController {
 
     @PostMapping
     public ResponseEntity<?> insert(@RequestBody InsertNewsRequest insertNewsRequest){
+        String a;
         return ResponseEntity.ok(iNewsService.insert(insertNewsRequest));
     }
 }
