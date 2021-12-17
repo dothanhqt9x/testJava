@@ -1,8 +1,14 @@
 package com.t3h.news.model;
 
-public class CategoryModel extends BaseModel{
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+public class CategoryModel{
+    private int id;
 
     private String name;
 
-    private int parentsCategoryId;
+    private int parentsCategory;
 }
