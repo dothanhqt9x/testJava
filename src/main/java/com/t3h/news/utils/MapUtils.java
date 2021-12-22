@@ -1,14 +1,17 @@
 package com.t3h.news.utils;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Type;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MapUtils {
 
     public static <T> T mapRow(T object, ResultSet resultSet){
-        Field[] fields = object.getClass().getDeclaredFields();
-        for (Field field: fields) {
+        Field[] fieldsSubClass  = object.getClass().getDeclaredFields();
+        Field[] fieldsSupperClass = object.getClass().getSuperclass().getDeclaredFields();
+        Field[] totalField = MapUtils.sumArrayField(fieldsSubClass,fieldsSupperClass);
+        for (Field field: totalField) {
             field.setAccessible(true);
             try {
                 Object data = resultSet.getObject(field.getName(),field.getType());
@@ -22,5 +25,19 @@ public class MapUtils {
             }
         }
         return object;
+    }
+
+    private static Field[] sumArrayField(Field[] first, Field[] second) {
+        int length = first.length + second.length;
+        Field[] result = new Field[length];
+        for (int i = 0; i < first.length; i++) {
+            result[i] = first[i];
+        }
+        int startSecondIndex = first.length;
+        for (Field field : second) {
+            result[startSecondIndex] = field;
+            startSecondIndex++;
+        }
+        return result;
     }
 }

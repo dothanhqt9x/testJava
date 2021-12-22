@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 public abstract class BaseModel {
     private int id;
 
-    private Timestamp createdDate;
+    private Timestamp createDate;
 
     private Timestamp updateDate;
 

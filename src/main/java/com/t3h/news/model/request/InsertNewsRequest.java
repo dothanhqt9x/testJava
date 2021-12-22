@@ -1,11 +1,12 @@
 package com.t3h.news.model.request;
 
+import com.t3h.news.model.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class InsertNewsRequest {
+public class InsertNewsRequest extends BaseModel {
 
     private int id;
 

@@ -34,4 +34,28 @@ public class INewsServiceImpl implements INewsService {
         }
         return newsModelResponse;
     }
+
+    @Override
+    public List<NewsModel> findByProperties(int numberAccess, int censor) {
+        return iNewsDao.findByProperties(numberAccess,censor);
+    }
+
+    @Override
+    public NewsModel update(int id,InsertNewsRequest insertNewsRequest) {
+        iNewsDao.updateById(id, insertNewsRequest);
+        NewsModel newsModelResponse = null;
+        for (NewsModel newsModel:this.getList()
+        ) {
+            if (newsModel.getId() == id){
+                newsModelResponse = newsModel;
+            }
+        }
+        return newsModelResponse;
+    }
+
+    @Override
+    public List<NewsModel> delete(int id) {
+        iNewsDao.delete(id);
+        return iNewsDao.getList();
+    }
 }

@@ -1,6 +1,7 @@
 package com.t3h.news.controller;
 
 import com.t3h.news.model.CategoryModel;
+import com.t3h.news.model.request.InsertCategoryRequest;
 import com.t3h.news.service.ICategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,5 +20,11 @@ public class CategoryController {
     @GetMapping()
     public ResponseEntity<List<CategoryModel>> getList(){
         return ResponseEntity.ok(iCategoryService.getList());
+    }
+
+    @PostMapping()
+    public ResponseEntity<CategoryModel> insert(@RequestBody InsertCategoryRequest insertCategoryRequest){
+        iCategoryService.insert(insertCategoryRequest);
+        return ResponseEntity.ok(iCategoryService.insert(insertCategoryRequest));
     }
 }
