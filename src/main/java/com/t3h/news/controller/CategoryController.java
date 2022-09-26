@@ -1,7 +1,6 @@
 package com.t3h.news.controller;
 
 import com.t3h.news.model.CategoryModel;
-import com.t3h.news.model.request.InsertCategoryRequest;
 import com.t3h.news.service.ICategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
