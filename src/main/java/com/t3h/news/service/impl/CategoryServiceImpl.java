@@ -2,7 +2,6 @@ package com.t3h.news.service.impl;
 
 import com.t3h.news.dao.ICategoryDao;
 import com.t3h.news.model.CategoryModel;
-import com.t3h.news.model.request.InsertCategoryRequest;
 import com.t3h.news.service.ICategoryService;
 import org.springframework.stereotype.Service;
 
@@ -20,10 +19,5 @@ public class CategoryServiceImpl implements ICategoryService {
     @Override
     public List<CategoryModel> getList() {
         return categoryDao.getList();
-    }
-
-    @Override
-    public CategoryModel insert(InsertCategoryRequest insertCategoryRequest) {
-        return categoryDao.insert(insertCategoryRequest);
     }
 }

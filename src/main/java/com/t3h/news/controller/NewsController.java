@@ -27,19 +27,4 @@ public class NewsController {
     public ResponseEntity<?> insert(@RequestBody InsertNewsRequest insertNewsRequest){
         return ResponseEntity.ok(iNewsService.insert(insertNewsRequest));
     }
-
-    @GetMapping("/properties")
-    public ResponseEntity<?> findByProperties(@RequestParam int numberAccess,@RequestParam int censor){
-        return ResponseEntity.ok(iNewsService.findByProperties(numberAccess,censor));
-    }
-
-    @PutMapping()
-    public ResponseEntity<?> update(@RequestParam int id,@RequestBody InsertNewsRequest insertNewsRequest){
-        return ResponseEntity.ok(iNewsService.update(id, insertNewsRequest));
-    }
-
-    @DeleteMapping()
-    public ResponseEntity<?> delete(@RequestParam int id){
-        return ResponseEntity.ok(iNewsService.delete(id));
-    }
 }

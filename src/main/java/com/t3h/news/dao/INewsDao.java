@@ -11,9 +11,4 @@ public interface INewsDao {
 
     int insert(InsertNewsRequest insertNewsRequest);
 
-    List<NewsModel> findByProperties(int numberAccess,int  censor);
-
-    void updateById(int id, InsertNewsRequest insertNewsRequest);
-
-    void delete(int id);
 }
