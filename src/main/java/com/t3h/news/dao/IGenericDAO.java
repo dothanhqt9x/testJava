@@ -8,7 +8,6 @@ public interface IGenericDAO <T extends Object>{
 
     List<T> getList(String sql, IRowMapper<T> rowMapper);
 
-    void insert(String sql,Object... parameters);
+    void insert(T t,Object... parameters);
 
-    List<T> findByProperties(String sql, IRowMapper<T> iRowMapper, Object... parameters);
 }

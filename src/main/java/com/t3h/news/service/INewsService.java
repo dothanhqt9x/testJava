@@ -9,10 +9,4 @@ public interface INewsService {
     List<NewsModel> getList();
 
     NewsModel insert(InsertNewsRequest insertNewsRequest);
-
-    List<NewsModel> findByProperties(int numberAccess,int  censor);
-
-    NewsModel update(int id,InsertNewsRequest insertNewsRequest);
-
-    List<NewsModel> delete(int id);
 }
