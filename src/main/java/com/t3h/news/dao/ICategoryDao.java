@@ -10,4 +10,7 @@ public interface ICategoryDao extends IGenericDAO<CategoryModel>{
     List<CategoryModel> getList();
 
     CategoryModel insert(InsertCategoryRequest insertCategoryRequest);
+
+    @Override
+    void insert(String sql, Object... parameters);
 }
